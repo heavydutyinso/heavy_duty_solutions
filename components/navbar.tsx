@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/sheet'
 import { Zap, Menu } from 'lucide-react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 type NavbarProps = {
   activePage?: 'home' | 'projects' | 'about' | 'careers'
 }
@@ -71,10 +71,15 @@ export function Navbar({ activePage }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Zap className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-primary">ZPI</span>
+            <Image
+              src={'/images/HDS_logo.png'}
+              alt={'HDS Logo'}
+              width={100}
+              height={60}
+            />
+            <span className="text-xl font-bold text-primary">
+              Heavy Duty Solutions
+            </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <NavLinks />
