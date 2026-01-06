@@ -307,7 +307,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-linear-to-r from-secondary via-primary to-accent text-primary-foreground">
+      <section className="py-20 md:py-32 ext-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
             Ready to Build Something Great?
@@ -320,7 +320,7 @@ export default function Home() {
             <Link href="/projects">
               <Button
                 size="lg"
-                className="bg-primary-foreground hover:bg-primary-foreground/90 text-secondary"
+                className="bg-primary hover:bg-primary/30 text-secondary"
               >
                 View Our Work
               </Button>
