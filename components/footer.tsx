@@ -73,10 +73,10 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 text-primary shrink-0" />
                 <a
-                  href="mailto:heavydutysolutions.co.zm"
+                  href="mailto:info@heavydutysolutions.co.zm"
                   className="hover:text-primary transition"
                 >
-                  heavydutysolutions.co.zm
+                  info@heavydutysolutions.co.zm
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -97,7 +97,7 @@ export function Footer() {
         </div>
         <div className="border-t border-secondary-foreground/20 pt-8">
           <p className="text-center text-sm text-secondary-foreground/60">
-            © 2025 Heavy Duty Solutions. Built to last, crafted with precision.
+            © 2026 Heavy Duty Solutions. Built to last, crafted with precision.
           </p>
         </div>
       </div>

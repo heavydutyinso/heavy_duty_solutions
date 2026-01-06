@@ -203,18 +203,18 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Managing Director',
+                name: 'Brian Ngoma',
                 role: 'CEO & Founder',
                 expertise: 'Strategic Leadership & Business Development',
               },
               {
-                name: 'Technical Director',
-                role: 'Head of Engineering',
-                expertise: 'Manufacturing & Fabrication',
+                name: 'Sabah Salmin',
+                role: 'Administrative Director',
+                expertise: 'Administration and Management',
               },
               {
-                name: 'Operations Manager',
-                role: 'Head of Operations',
+                name: 'Upendo Ngoma',
+                role: 'Administrative Assistant',
                 expertise: 'Project Management & Quality Control',
               },
             ].map((member, i) => (

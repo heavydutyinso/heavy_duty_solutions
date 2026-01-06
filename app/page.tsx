@@ -35,7 +35,7 @@ export default function Home() {
       }\n\nQuestion/Inquiry:\n${question}`
     )
 
-    window.location.href = `mailto:heavydutysolutions.co.zm?subject=${subject}&body=${body}`
+    window.location.href = `mailto:info@heavydutysolutions.co.zm?subject=${subject}&body=${body}`
   }
 
   return (
