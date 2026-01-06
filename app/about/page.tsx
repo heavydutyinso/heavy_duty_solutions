@@ -20,6 +20,7 @@ import {
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -75,9 +76,12 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-64 md:h-96 lg:h-full min-h-[400px]">
-              <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-                <Target className="w-32 h-32 text-primary/30" />
-              </div>
+              <Image
+                src="/images/hydromaster_on_water.jpeg"
+                alt="Hydro Master on Water"
+                fill
+                className="object-cover rounded-2xl"
+              />
             </div>
           </div>
         </div>
@@ -88,9 +92,12 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-64 md:h-96 lg:h-full min-h-[400px] order-2 lg:order-1">
-              <div className="absolute inset-0 bg-linear-to-br from-accent/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-                <Eye className="w-32 h-32 text-primary/30" />
-              </div>
+              <Image
+                src="/images/modern-zambian-manufacturing.jpg"
+                alt="Modern Zambian Manufacturing"
+                fill
+                className="object-cover rounded-2xl"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/30 rounded-full mb-6">
