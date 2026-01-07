@@ -25,16 +25,16 @@ export default function ProjectDetailPage(props: {
       <Navbar activePage="projects" />
 
       {/* Hero Section with Parallax */}
-      <section 
+      <section
         className="relative py-12 md:py-20 parallax-hero min-h-[50vh] flex items-end"
         style={{
           backgroundImage: 'url(/images/industrial_background.jpg)',
         }}
       >
         {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/75 to-black/60"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/40"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pb-8">
           <Link
             href="/projects"
@@ -71,7 +71,9 @@ export default function ProjectDetailPage(props: {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold text-white">{project.location}</p>
+                <p className="text-lg font-semibold text-white">
+                  {project.location}
+                </p>
               </CardContent>
             </Card>
             <Card className="glass-card card-industrial">
@@ -82,24 +84,28 @@ export default function ProjectDetailPage(props: {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold text-white">{project.status}</p>
+                <p className="text-lg font-semibold text-white">
+                  {project.status}
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
-        
+
         {/* Gradient fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent"></div>
       </section>
 
       {/* Details Section */}
       <section className="py-20 md:py-32 bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold mb-8 text-white">Key Features</h2>
+              <h2 className="text-3xl font-bold mb-8 text-white">
+                Key Features
+              </h2>
               <ul className="space-y-4">
                 {project.details.map((detail, index) => (
                   <li key={index} className="flex gap-4">
@@ -118,9 +124,7 @@ export default function ProjectDetailPage(props: {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
-                    <p className="text-sm text-white/60 mb-2">
-                      Primary Impact
-                    </p>
+                    <p className="text-sm text-white/60 mb-2">Primary Impact</p>
                     <p className="text-lg font-semibold text-primary">
                       {project.impact}
                     </p>
@@ -157,17 +161,20 @@ export default function ProjectDetailPage(props: {
       </section>
 
       {/* Related Projects with Parallax */}
-      <section 
+      <section
         className="relative py-20 md:py-32 parallax-section"
         style={{
-          backgroundImage: 'url(/images/industrial-metallic-parallax-extension.jpg)',
+          backgroundImage:
+            'url(/images/industrial-metallic-parallax-extension.jpg)',
         }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/80"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl font-bold mb-12 text-white text-shadow-industrial">Other Services</h2>
+          <h2 className="text-3xl font-bold mb-12 text-white text-shadow-industrial">
+            Other Services
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects
               .filter((p) => p.id !== project.id)
@@ -204,8 +211,8 @@ export default function ProjectDetailPage(props: {
 
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance text-white">
             Ready to Start Your Project?

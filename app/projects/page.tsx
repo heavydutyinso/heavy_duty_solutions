@@ -20,20 +20,23 @@ export default function ProjectsPage() {
       <Navbar activePage="projects" />
 
       {/* Hero Section with Parallax */}
-      <section 
+      <section
         className="relative min-h-[50vh] flex items-center parallax-hero"
         style={{
           backgroundImage: 'url(/images/industrial_background.jpg)',
         }}
       >
         {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/70 to-black/60"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/40"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance mb-6 text-white text-shadow-industrial">
-              Our <span className="text-primary text-shadow-glow">Services & Projects</span>
+              Our{' '}
+              <span className="text-primary text-shadow-glow">
+                Services & Projects
+              </span>
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mx-auto text-shadow-subtle">
               Explore our comprehensive range of manufacturing, fabrication, and
@@ -42,21 +45,22 @@ export default function ProjectsPage() {
             </p>
           </div>
         </div>
-        
+
         {/* Gradient fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent"></div>
       </section>
 
       {/* Projects Grid with Parallax Background */}
-      <section 
+      <section
         className="relative py-20 md:py-32 parallax-section"
         style={{
-          backgroundImage: 'url(/images/industrial-metallic-parallax-extension.jpg)',
+          backgroundImage:
+            'url(/images/industrial-metallic-parallax-extension.jpg)',
         }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/75"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
@@ -72,23 +76,19 @@ export default function ProjectsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      <p className="text-sm text-white/60">
-                        {project.impact}
-                      </p>
+                      <p className="text-sm text-white/60">{project.impact}</p>
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div className="bg-primary/10 p-3 rounded-lg border border-primary/20">
-                          <p className="text-white/50 text-xs mb-1">
-                            Capacity
-                          </p>
+                          <p className="text-white/50 text-xs mb-1">Capacity</p>
                           <p className="font-semibold text-primary">
                             {project.capacity}
                           </p>
                         </div>
                         <div className="bg-white/5 p-3 rounded-lg border border-white/10">
-                          <p className="text-white/50 text-xs mb-1">
-                            Status
+                          <p className="text-white/50 text-xs mb-1">Status</p>
+                          <p className="font-semibold text-white">
+                            {project.status}
                           </p>
-                          <p className="font-semibold text-white">{project.status}</p>
                         </div>
                       </div>
                       <Button
@@ -109,8 +109,8 @@ export default function ProjectsPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance text-white">
             Have a Project in Mind?

@@ -28,20 +28,23 @@ export default function AboutPage() {
       <Navbar activePage="about" />
 
       {/* Hero Section with Parallax */}
-      <section 
+      <section
         className="relative min-h-[60vh] flex items-center parallax-hero"
         style={{
           backgroundImage: 'url(/images/industrial_background.jpg)',
         }}
       >
         {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/70 to-black/60"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/40"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance mb-6 text-white text-shadow-industrial">
-              About <span className="text-primary text-shadow-glow">Heavy Duty Solutions</span>
+              About{' '}
+              <span className="text-primary text-shadow-glow">
+                Heavy Duty Solutions
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 text-balance text-shadow-subtle">
               Leading Zambia's manufacturing and fabrication industry with
@@ -50,21 +53,22 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        
+
         {/* Gradient fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent"></div>
       </section>
 
       {/* Mission Section with Parallax */}
-      <section 
+      <section
         className="relative py-20 md:py-32 parallax-section"
         style={{
-          backgroundImage: 'url(/images/industrial-metallic-parallax-extension.jpg)',
+          backgroundImage:
+            'url(/images/industrial-metallic-parallax-extension.jpg)',
         }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/80"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -109,8 +113,8 @@ export default function AboutPage() {
 
       {/* Vision Section */}
       <section className="py-20 md:py-32 bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-64 md:h-96 lg:h-full min-h-[400px] order-2 lg:order-1">
@@ -151,22 +155,23 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        
+
         {/* Decorative divider */}
         <div className="absolute bottom-0 left-0 right-0 h-px divider-industrial"></div>
       </section>
 
       {/* Values Section with Parallax */}
-      <section 
+      <section
         className="relative py-20 md:py-32 parallax-section"
         style={{
-          backgroundImage: 'url(/images/industrial-metallic-parallax-extension.jpg)',
+          backgroundImage:
+            'url(/images/industrial-metallic-parallax-extension.jpg)',
           backgroundPositionY: '40%',
         }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/80"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1.5 glass-card rounded-full mb-6 border border-primary/30">
@@ -213,12 +218,12 @@ export default function AboutPage() {
               <Card key={i} className="glass-card card-industrial">
                 <CardHeader>
                   <value.icon className="w-10 h-10 text-primary mb-4" />
-                  <CardTitle className="text-lg text-white">{value.title}</CardTitle>
+                  <CardTitle className="text-lg text-white">
+                    {value.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-white/70 text-sm">
-                    {value.description}
-                  </p>
+                  <p className="text-white/70 text-sm">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -232,8 +237,8 @@ export default function AboutPage() {
         className="relative py-20 md:py-32 bg-background"
         style={{ position: 'relative', zIndex: 20 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-white">
@@ -268,12 +273,12 @@ export default function AboutPage() {
                     <Users className="w-10 h-10 text-primary" />
                   </div>
                   <CardTitle className="text-white">{member.name}</CardTitle>
-                  <CardDescription className="text-primary">{member.role}</CardDescription>
+                  <CardDescription className="text-primary">
+                    {member.role}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-white/70 text-sm">
-                    {member.expertise}
-                  </p>
+                  <p className="text-white/70 text-sm">{member.expertise}</p>
                 </CardContent>
               </Card>
             ))}
@@ -282,16 +287,17 @@ export default function AboutPage() {
       </section>
 
       {/* Why We Exist Section with Parallax */}
-      <section 
+      <section
         className="relative py-20 md:py-32 parallax-section"
         style={{
-          backgroundImage: 'url(/images/industrial-metallic-parallax-extension.jpg)',
+          backgroundImage:
+            'url(/images/industrial-metallic-parallax-extension.jpg)',
           backgroundPositionY: '60%',
         }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/80"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-white text-shadow-industrial">
@@ -304,7 +310,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="glass-card-strong card-industrial">
               <CardHeader>
-                <CardTitle className="text-xl text-white">The Industry Need</CardTitle>
+                <CardTitle className="text-xl text-white">
+                  The Industry Need
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-white/70 mb-4">
@@ -321,7 +329,9 @@ export default function AboutPage() {
             </Card>
             <Card className="glass-card-strong card-industrial">
               <CardHeader>
-                <CardTitle className="text-xl text-white">Our Commitment</CardTitle>
+                <CardTitle className="text-xl text-white">
+                  Our Commitment
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-white/70 mb-4">
@@ -343,8 +353,8 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-background relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
-        
+        <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance text-white">
             Ready to Work With Us?
