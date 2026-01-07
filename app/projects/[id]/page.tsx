@@ -181,7 +181,7 @@ export default function ProjectDetailPage(props: {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-linear-to-r from-secondary via-primary to-accent text-primary-foreground">
+      <section className="py-20 md:py-32 bg-accent/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
             Ready to Start Your Project?
@@ -194,7 +194,7 @@ export default function ProjectDetailPage(props: {
             <a href="/#contact">
               <Button
                 size="lg"
-                className="bg-primary-foreground hover:bg-primary-foreground/90 text-secondary"
+                className="bg-primary hover:bg-primary/30 text-secondary"
               >
                 Get a Quote
               </Button>
