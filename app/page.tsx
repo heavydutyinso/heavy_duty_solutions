@@ -95,7 +95,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-64 md:h-96 lg:h-[500px] hidden lg:block">
-              <div className="absolute inset-0 glow-green rounded-2xl opacity-30"></div>
+              <div className="absolute inset-0  rounded-2xl opacity-30"></div>
               <Image
                 src="/images/oie_transparent.png"
                 alt="Zambia Power Production - Solar, Wind, Hydro, and Nuclear Energy"
@@ -333,7 +333,7 @@ export default function Home() {
             </Card>
             <div className="hidden lg:flex items-center justify-center sticky top-24">
               <div className="relative w-full max-w-md aspect-square">
-                <div className="absolute inset-0 glow-green rounded-full opacity-20"></div>
+                <div className="absolute inset-0 rounded-full opacity-20"></div>
                 <Image
                   src={
                     contactType === 'individual'
