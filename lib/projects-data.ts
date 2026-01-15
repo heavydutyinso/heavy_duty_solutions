@@ -37,6 +37,17 @@ export const projects: Project[] = [
     location: "Zambia's Major Rivers",
     capacity: 'Scalable Output',
     status: 'Active Development',
+    images: [
+      {
+        src: '/services/hydro_master/hm1.jpeg',
+      },
+      {
+        src: '/services/hydro_master/hm2.jpeg',
+      },
+      {
+        src: '/services/hydro_master/hm3.jpeg',
+      },
+    ],
   },
   {
     id: 'prefabricated-buildings',
@@ -185,7 +196,11 @@ export const projects: Project[] = [
     location: 'Workshop Based',
     capacity: 'Flexible',
     status: 'Always Available',
-    images: [{ src: '/services/metal_fabrication/metal_fabrication.jpeg' }],
+    images: [
+      { src: '/services/metal_fabrication/metal_fabrication.jpeg' },
+      { src: '/services/metal_fabrication/metal_cooker.jpeg' },
+      { src: '/services/metal_fabrication/metal_cookers.jpeg' },
+    ],
   },
   {
     id: 'food-trailers',
