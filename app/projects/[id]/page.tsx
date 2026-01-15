@@ -148,7 +148,7 @@ export default function ProjectDetailPage(props: {
                 className="w-full"
               >
                 <CarouselContent>
-                  {project.images!.map((image, index) => (
+                  {(project.images || []).map((image, index) => (
                     <CarouselItem key={index}>
                       <div className="relative aspect-16/10 overflow-hidden rounded-xl glass-card-strong">
                         <Image
