@@ -177,6 +177,7 @@ export const projects: Project[] = [
     location: 'Nationwide Supply',
     capacity: 'Bulk Available',
     status: 'In Stock',
+    images: [{ src: '/services/metal_fabrication/metal_fabrication.jpeg' }],
   },
   {
     id: 'metal-works',
