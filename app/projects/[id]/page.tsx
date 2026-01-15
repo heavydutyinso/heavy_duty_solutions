@@ -1,24 +1,53 @@
 'use client'
-import { use } from 'react'
+import { use, useState, useCallback, useEffect } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowLeft, CheckCircle2, MapPin, Gauge } from 'lucide-react'
+import { ArrowLeft, CheckCircle2, MapPin, Gauge, ImageIcon } from 'lucide-react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { projects } from '@/lib/projects-data'
 import { notFound } from 'next/navigation'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from '@/components/ui/carousel'
 
 export default function ProjectDetailPage(props: {
   params: Promise<{ id: string }>
 }) {
   const params = use(props.params)
   const project = projects.find((p) => p.id === params.id)
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>()
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [slideCount, setSlideCount] = useState(0)
+
+  const onSelect = useCallback(() => {
+    if (!carouselApi) return
+    setCurrentSlide(carouselApi.selectedScrollSnap())
+  }, [carouselApi])
+
+  useEffect(() => {
+    if (!carouselApi) return
+    setSlideCount(carouselApi.scrollSnapList().length)
+    setCurrentSlide(carouselApi.selectedScrollSnap())
+    carouselApi.on('select', onSelect)
+    return () => {
+      carouselApi.off('select', onSelect)
+    }
+  }, [carouselApi, onSelect])
 
   if (!project) {
     notFound()
   }
+
+  const hasImages = project.images && project.images.length > 0
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -95,6 +124,77 @@ export default function ProjectDetailPage(props: {
         {/* Gradient fade to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent"></div>
       </section>
+
+      {/* Image Gallery Section */}
+      {hasImages && (
+        <section className="py-16 md:py-24 bg-background relative">
+          <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent"></div>
+
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="flex items-center gap-3 mb-8">
+              <ImageIcon className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                Project Gallery
+              </h2>
+            </div>
+
+            <div className="relative px-12">
+              <Carousel
+                setApi={setCarouselApi}
+                opts={{
+                  align: 'center',
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {(project.images || []).map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="relative aspect-16/10 overflow-hidden rounded-xl glass-card-strong">
+                        <Image
+                          src={image.src}
+                          alt={image.caption || `${project.title} image ${index + 1}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                        />
+                        {/* Gradient overlay for caption */}
+                        {image.caption && (
+                          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 via-black/40 to-transparent pt-16 pb-6 px-6">
+                            <p className="text-white text-lg font-medium text-shadow-subtle">
+                              {image.caption}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="border-primary/30 text-white hover:bg-primary/20 hover:border-primary bg-black/50 backdrop-blur-sm" />
+                <CarouselNext className="border-primary/30 text-white hover:bg-primary/20 hover:border-primary bg-black/50 backdrop-blur-sm" />
+              </Carousel>
+
+              {/* Dot indicators */}
+              {slideCount > 1 && (
+                <div className="flex justify-center gap-2 mt-6">
+                  {Array.from({ length: slideCount }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => carouselApi?.scrollTo(index)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        index === currentSlide
+                          ? 'bg-primary w-8'
+                          : 'bg-white/30 hover:bg-white/50'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Details Section */}
       <section className="py-20 md:py-32 bg-background relative">
