@@ -1,4 +1,22 @@
-export const projects = [
+export type ProjectImage = {
+  src: string
+  caption?: string
+}
+
+export type Project = {
+  id: string
+  title: string
+  shortDescription: string
+  fullDescription: string
+  details: string[]
+  impact: string
+  location: string
+  capacity: string
+  status: string
+  images?: ProjectImage[]
+}
+
+export const projects: Project[] = [
   {
     id: 'hydro-master',
     title: 'Hydro Master',
@@ -39,6 +57,10 @@ export const projects = [
     location: 'Nationwide Delivery',
     capacity: 'Custom Sizes',
     status: 'Available Now',
+    images: [
+      { src: '/services/prefab_buildings/building_day.jpeg', caption: 'Prefab building - daytime view' },
+      { src: '/services/prefab_buildings/building_night.jpeg', caption: 'Prefab building - nighttime view' },
+    ],
   },
   {
     id: 'steel-structures',
@@ -79,6 +101,9 @@ export const projects = [
     location: 'In-House Facility',
     capacity: 'High Volume',
     status: 'Operational',
+    images: [
+      { src: '/services/cnc_laser_cutting/laser_cutting.jpeg', caption: 'CNC laser cutting in action' },
+    ],
   },
   {
     id: 'booths-kiosks',
@@ -98,6 +123,11 @@ export const projects = [
     location: 'Nationwide Delivery',
     capacity: 'Any Quantity',
     status: 'Ready to Order',
+    images: [
+      { src: '/services/booths/izb_front.jpeg', caption: 'IZB booth - front view' },
+      { src: '/services/booths/izb_right.jpeg', caption: 'IZB booth - side view' },
+      { src: '/services/booths/zanaco_many.jpeg', caption: 'Zanaco booth installation' },
+    ],
   },
   {
     id: 'outdoor-furniture',
@@ -121,7 +151,7 @@ export const projects = [
   },
   {
     id: 'metal-works',
-    title: 'General Metal Works',
+    title: 'Metal Fabrication',
     shortDescription: 'Custom metal fabrication for any project requirement',
     fullDescription:
       'Our general metal works division handles custom fabrication projects of all sizes. From gates and railings to specialized industrial components, our skilled team can manufacture to your specifications using various metals and finishing techniques.',
@@ -137,5 +167,81 @@ export const projects = [
     location: 'Workshop Based',
     capacity: 'Flexible',
     status: 'Always Available',
+    images: [
+      { src: '/services/metal_fabrication/metal_fabrication.jpeg' },
+    ],
+  },
+  {
+    id: 'food-trailers',
+    title: 'Food Trailers',
+    shortDescription: 'Custom mobile food trailers for catering and vending',
+    fullDescription:
+      'Our food trailers are designed for entrepreneurs looking to start or expand their mobile food business. From compact standard units to impressive double-decker designs, we build trailers that are fully equipped, easy to tow, and built to meet health and safety standards.',
+    details: [
+      'Multiple sizes: standard, medium, and double-decker',
+      'Fully equipped kitchen layouts',
+      'Stainless steel food-safe surfaces',
+      'Electrical and plumbing integration',
+      'Custom branding and signage options',
+      'Compliant with health regulations',
+    ],
+    impact: 'Empowering food entrepreneurs with mobile business solutions',
+    location: 'Nationwide Delivery',
+    capacity: 'Custom Orders',
+    status: 'Available Now',
+    images: [
+      { src: '/services/food_trailers/standard.jpeg', caption: 'Standard food trailer' },
+      { src: '/services/food_trailers/medium.jpeg', caption: 'Medium food trailer' },
+      { src: '/services/food_trailers/double_decker.jpeg', caption: 'Double-decker food trailer' },
+    ],
+  },
+  {
+    id: 'foot-operated-stations',
+    title: 'Foot-Operated Washing Stations',
+    shortDescription: 'Hygienic handwashing stations with touchless operation',
+    fullDescription:
+      'Our foot-operated washing stations provide a hygienic handwashing solution for public spaces, offices, schools, and events. The touchless design minimizes contact and helps prevent the spread of germs, making them ideal for high-traffic areas.',
+    details: [
+      'Touchless foot-pedal operation',
+      'Multiple configurations available',
+      'Stainless steel construction for durability',
+      '6-in-1 multi-user stations available',
+      'Portable and permanent installation options',
+      'Low maintenance design',
+    ],
+    impact: 'Promoting hygiene and health in public spaces',
+    location: 'Nationwide Delivery',
+    capacity: 'Bulk Orders Available',
+    status: 'In Stock',
+    images: [
+      { src: '/services/foot_operated_stations/6_in_1_foot_operated_washing_station.jpeg', caption: '6-in-1 foot-operated washing station' },
+      { src: '/services/foot_operated_stations/foot_operated_station_at_sadc.jpeg', caption: 'Installation at SADC' },
+      { src: '/services/foot_operated_stations/nemchem.jpeg', caption: 'Nemchem installation' },
+      { src: '/services/foot_operated_stations/stainless_steel.jpeg', caption: 'Stainless steel model' },
+    ],
+  },
+  {
+    id: 'smokers-brai-stands',
+    title: 'Smokers & Brai Stands',
+    shortDescription: 'Quality smokers and braai stands for outdoor cooking',
+    fullDescription:
+      'Our smokers and braai stands are crafted for serious outdoor cooking enthusiasts. Built from heavy-duty steel with precision welding, these units deliver excellent heat retention and durability for years of use. Available in various sizes for home use or commercial operations.',
+    details: [
+      'Heavy-duty steel construction',
+      'Precision-welded for durability',
+      'Multiple sizes available',
+      'Excellent heat retention',
+      'Portable and stationary options',
+      'Custom designs on request',
+    ],
+    impact: 'Bringing quality outdoor cooking equipment to homes and businesses',
+    location: 'Nationwide Delivery',
+    capacity: 'Any Quantity',
+    status: 'Ready to Order',
+    images: [
+      { src: '/services/smokers_and_brai_stands/smoker1.jpeg', caption: 'Smoker unit' },
+      { src: '/services/smokers_and_brai_stands/tall1.jpeg', caption: 'Tall smoker design' },
+      { src: '/services/smokers_and_brai_stands/brai_stand.jpeg', caption: 'Braai stand' },
+    ],
   },
 ]
